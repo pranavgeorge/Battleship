@@ -184,10 +184,9 @@ public class SeaGrid : ISeaGrid
 		}
 		finally
 		{
-                if (Changed != null)
-                    Changed(this, EventArgs.Empty);
-               // Changed?.Invoke(this, EventArgs.Empty);
-        }
+                Changed?.Invoke(this, EventArgs.Empty);
+                // Changed?.Invoke(this, EventArgs.Empty);
+            }
 	}
 	
 	/// <summary>
@@ -228,9 +227,9 @@ public class SeaGrid : ISeaGrid
 		}
 		finally
 		{
-                if (Changed != null)
-                    Changed(this, EventArgs.Empty);
-                //Changed?.Invoke(this, EventArgs.Empty);
+                /*if (Changed != null)
+                    Changed(this, EventArgs.Empty);*/
+                Changed?.Invoke(this, EventArgs.Empty);
             }
 	}
 }}

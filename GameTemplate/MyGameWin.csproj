@@ -38,6 +38,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="src\DeploymentController.cs" />
     <Compile Include="src\DiscoveryController.cs" />
     <Compile Include="src\EndingGameController.cs" />

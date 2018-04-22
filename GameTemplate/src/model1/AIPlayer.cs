@@ -17,7 +17,11 @@ namespace MyGame
         /// AI Player. The use of which determines the difficulty.
         /// </summary>
 
+#pragma warning disable CS0660 // 'AIPlayer.Location' defines operator == or operator != but does not override Object.Equals(object o)
+#pragma warning disable CS0661 // 'AIPlayer.Location' defines operator == or operator != but does not override Object.GetHashCode()
         protected class Location
+#pragma warning restore CS0661 // 'AIPlayer.Location' defines operator == or operator != but does not override Object.GetHashCode()
+#pragma warning restore CS0660 // 'AIPlayer.Location' defines operator == or operator != but does not override Object.Equals(object o)
         {
             private int _Row;
 
@@ -63,7 +67,7 @@ namespace MyGame
             /// <returns>true if location 1 and location 2 are at the same spot</returns>
             public static bool operator == (Location @this, Location other)
             {
-                return !ReferenceEquals(@this, null) && !ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;
+                return !(@this is null) && !(other is null) && @this.Row == other.Row && @this.Column == other.Column;
             }
 
             /// <summary>
@@ -74,7 +78,7 @@ namespace MyGame
             /// <returns>true if location 1 and location 2 are not at the same spot</returns>
             public static bool operator != (Location @this, Location other)
             {
-                return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
+                return @this is null || other is null || @this.Row != other.Row || @this.Column != other.Column;
             }
         }
 

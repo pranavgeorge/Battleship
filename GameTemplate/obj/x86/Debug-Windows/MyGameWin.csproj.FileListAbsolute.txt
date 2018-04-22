@@ -146,8 +146,9 @@ E:\Battleship\GameTemplate\bin\Debug\MyGame.exe.config
 E:\Battleship\GameTemplate\bin\Debug\MyGame.exe
 E:\Battleship\GameTemplate\bin\Debug\MyGame.pdb
 E:\Battleship\GameTemplate\bin\Debug\SwinGame.dll
-E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CopyComplete
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGame.exe
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGame.pdb
+E:\Battleship\GameTemplate\bin\Debug\MyGame.exe.CodeAnalysisLog.xml
+E:\Battleship\GameTemplate\bin\Debug\MyGame.exe.lastcodeanalysissucceeded

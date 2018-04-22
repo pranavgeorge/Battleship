@@ -289,10 +289,10 @@ namespace MyGame
             switch (button)
             {
                 case SETUP_MENU_EASY_BUTTON:
-                    SetDifficulty(AIOption.Hard);
+                    SetDifficulty(AIOption.Easy);
                     break;
                 case SETUP_MENU_MEDIUM_BUTTON:
-                    SetDifficulty(AIOption.Hard);
+                    SetDifficulty(AIOption.Medium);
                     break;
                 case SETUP_MENU_HARD_BUTTON:
                     SetDifficulty(AIOption.Hard);

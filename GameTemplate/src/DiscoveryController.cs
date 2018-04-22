@@ -68,11 +68,19 @@ namespace MyGame
             const int SHOTS_TOP = 157;
             const int HITS_TOP = 206;
             const int SPLASH_TOP = 256;
-
+            Rectangle toDraw = default(Rectangle);
+            string Print = null;
+            toDraw.X = 0;
+            toDraw.Y = 250;
+            toDraw.Width = SwinGame.ScreenWidth();
+            toDraw.Height = SwinGame.ScreenHeight();
             if ((SwinGame.KeyDown(KeyCode.LeftShiftKey) | SwinGame.KeyDown(KeyCode.RightShiftKey)) & SwinGame.KeyDown(KeyCode.CKey))
             {
                 DrawField(HumanPlayer.EnemyGrid, ComputerPlayer, true);
-                
+                Print = "-- CHEATER --";
+
+                SwinGame.DrawText(Print, Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, toDraw);
+
             }
             else
             {

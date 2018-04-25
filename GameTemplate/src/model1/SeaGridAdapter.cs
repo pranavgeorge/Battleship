@@ -31,8 +31,7 @@ namespace MyGame
         /// <param name="e">what needs to be redrawn</param>
         private void MyGrid_Changed(object sender, EventArgs e)
         {
-            if (Changed != null)
-                Changed(this, e);
+            Changed?.Invoke(this, e);
         }
 
         #region ISeaGrid Members

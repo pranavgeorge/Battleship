@@ -150,3 +150,4 @@ E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInp
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CopyComplete
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGame.exe
 E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGame.pdb
+E:\Battleship\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache

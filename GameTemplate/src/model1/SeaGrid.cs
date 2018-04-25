@@ -186,7 +186,7 @@ public class SeaGrid : ISeaGrid
 		{
                 Changed?.Invoke(this, EventArgs.Empty);
                 // Changed?.Invoke(this, EventArgs.Empty);
-            }
+        }
 	}
 	
 	/// <summary>

@@ -264,23 +264,26 @@ namespace MyGame
         public static void DrawBackground()
         {
 
-            if ((((CurrentState == GameState.ViewingMainMenu) || (CurrentState == GameState.ViewingGameMenu)) || (CurrentState == GameState.AlteringSettings)) || (CurrentState == GameState.ViewingHighScores))
+            switch (GameController.CurrentState)
             {
-                SwinGame.DrawBitmap(GameImage("Menu"), 0, 0);
-            }
-            else if ((CurrentState == GameState.Discovering) || (CurrentState == GameState.EndingGame))
-            {
-                SwinGame.DrawBitmap(GameImage("Discovery"), 0, 0);
-            }
-            else if (CurrentState == GameState.Deploying)
-            {
-                SwinGame.DrawBitmap(GameImage("Deploy"), 0, 0);
-            }
-            else
-            {
-                SwinGame.ClearScreen();
-            }
+                case GameState.ViewingMainMenu:
+                case GameState.ViewingGameMenu:
+                case GameState.AlteringSettings:
+                case GameState.ViewingHighScores:
+                    SwinGame.DrawBitmap(GameImage("Menu"), 0, 0);
+                    break;
+                case GameState.Discovering:
+                case GameState.EndingGame:
+                    SwinGame.DrawBitmap(GameImage("Discovery"), 0, 0);
+                    break;
 
+                case GameState.Deploying:
+                    SwinGame.DrawBitmap(GameImage("Deploy"), 0, 0);
+                    break;
+                default:
+                    SwinGame.ClearScreen();
+                    break;
+            }
             SwinGame.DrawFramerate(675, 585);
         }
 

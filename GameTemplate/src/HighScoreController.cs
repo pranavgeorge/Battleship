@@ -108,7 +108,7 @@ namespace MyGame
             string filename = null;
             filename = SwinGame.PathToResource("highscores.txt");
 
-            StreamWriter output = null;
+            StreamWriter output = default(StreamWriter);
             output = new StreamWriter(filename);
 
             output.WriteLine(_Scores.Count);
@@ -215,6 +215,8 @@ namespace MyGame
                 _Scores.RemoveAt(_Scores.Count - 1);
                 _Scores.Add(s);
                 _Scores.Sort();
+                // saving the scores
+                SaveScores();
 
                 EndCurrentState();
             }

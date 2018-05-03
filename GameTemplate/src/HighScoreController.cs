@@ -19,7 +19,7 @@ namespace MyGame
     /// </remarks>
     static class HighScoreController
     {
-        private const int NAME_WIDTH = 3;
+        private const int NAME_WIDTH = 15;
 
         private const int SCORES_LEFT = 490;
         /// <summary>
@@ -85,9 +85,10 @@ namespace MyGame
                 string line = null;
 
                 line = input.ReadLine();
-
-                s.Name = line.Substring(0, NAME_WIDTH);
-                s.Value = Convert.ToInt32(line.Substring(NAME_WIDTH));
+                string[] bothDimensions = line.Split(' ');
+                //s.Name = Convert.ToString(line.Substring(0, NAME_WIDTH));
+                s.Name = bothDimensions[0];
+                s.Value = Convert.ToInt32(bothDimensions[1]);
                 _Scores.Add(s);
             }
             input.Close();
@@ -108,6 +109,7 @@ namespace MyGame
             string filename = null;
             filename = SwinGame.PathToResource("highscores.txt");
 
+            //StreamWriter output = null;
             StreamWriter output = default(StreamWriter);
             output = new StreamWriter(filename);
 
@@ -115,7 +117,7 @@ namespace MyGame
 
             foreach (Score s in _Scores)
             {
-                output.WriteLine(s.Name + s.Value);
+                output.WriteLine(s.Name + " " + s.Value);
             }
 
             output.Close();
@@ -163,7 +165,9 @@ namespace MyGame
         {
             if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.EscapeKey) || SwinGame.KeyTyped(KeyCode.ReturnKey))
             {
-                EndCurrentState();
+                SaveScores();
+             EndCurrentState();
+                //EndCurrentState();
             }
         }
 
@@ -180,7 +184,7 @@ namespace MyGame
 
             if (_Scores.Count == 0)
                 LoadScores();
-            
+
             //is it a high score
             if (value > _Scores[_Scores.Count - 1].Value)
             {
@@ -215,8 +219,8 @@ namespace MyGame
                 _Scores.RemoveAt(_Scores.Count - 1);
                 _Scores.Add(s);
                 _Scores.Sort();
-                // saving the scores
-                SaveScores();
+                // To save the scores before ending current state
+                
 
                 EndCurrentState();
             }

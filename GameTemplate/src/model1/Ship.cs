@@ -125,7 +125,7 @@ namespace MyGame
             {
                 tile.ClearShip();
             }
-            _tiles.Clear();
+            //_tiles.Clear();
         }
 
         public void Hit()

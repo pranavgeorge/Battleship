@@ -178,7 +178,7 @@ public class SeaGrid : ISeaGrid
 		}
 		catch (Exception e)
 		{
-			newShip.Remove(); //if fails remove the ship
+			// newShip.Remove(); //if fails remove the ship
 			throw (new ApplicationException(e.Message));
 			
 		}
